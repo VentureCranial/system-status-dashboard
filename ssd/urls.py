@@ -15,6 +15,8 @@
 
 
 from django.conf.urls import patterns, include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from django.contrib import admin
 admin.autodiscover()
 
@@ -112,3 +114,6 @@ urlpatterns = patterns('',
     # Events
     url(r'^admin/update_modify$',           'ssd.dashboard.views.events.update_modify'),
 )
+
+urlpatterns += staticfiles_urlpatterns()
+
